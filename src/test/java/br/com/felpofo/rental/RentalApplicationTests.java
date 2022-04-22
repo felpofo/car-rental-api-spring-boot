@@ -1,4 +1,4 @@
-package rental;
+package br.com.felpofo.rental;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
