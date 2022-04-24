@@ -41,7 +41,7 @@ public class User {
   private boolean admin;
 
   @Column(name="driver_license")
-  private String driver_license;
+  private String driverLicense;
 
   @ManyToOne
   @JoinColumn(name = "rentals_id")
@@ -49,11 +49,11 @@ public class User {
 
   @CreationTimestamp
   @Column(name="created_at", nullable=false, updatable=false)
-  private Timestamp created_at;
+  private Timestamp createdAt;
 
   @UpdateTimestamp
   @Column(name="updated_at", nullable=false)
-  private Timestamp updated_at;
+  private Timestamp updatedAt;
 
   public String toString() {
     return String.format(
@@ -70,8 +70,8 @@ public class User {
         updated_at=%s
         """,
       id, name, username, password,
-      email, admin, driver_license,
-      rentals, created_at, updated_at
+      email, admin, driverLicense,
+      rentals, createdAt, updatedAt
     );
   }
 }

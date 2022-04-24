@@ -29,34 +29,34 @@ public class Car {
   @Column(name="description")
   private String description;
 
-  @Column(name="available")
+  @Column(name="available", nullable=false)
   private boolean available;
 
   @NonNull
   @Column(name="license_plate", nullable=false, unique=true)
-  private String license_plate;
+  private String licensePlate;
 
   @Column(name="image_url")
-  private String image_url;
+  private String imageUrl;
 
   @NonNull
-  @Column(name="daily_rate")
-  private BigDecimal daily_rate;
+  @Column(name="daily_rate", nullable=false)
+  private BigDecimal dailyRate;
 
   @NonNull
-  @Column(name="fine_amount")
-  private BigDecimal fine_amount;
+  @Column(name="fineAmount", nullable=false)
+  private BigDecimal fineAmount;
 
   @NonNull
   @ManyToOne
-  @JoinColumn(name = "brand_id")
+  @JoinColumn(name = "brand_id", nullable=false, updatable=false)
   private Brand brand;
 
   @CreationTimestamp
   @Column(name="created_at", nullable=false, updatable=false)
-  private Timestamp created_at;
+  private Timestamp createdAt;
 
   @UpdateTimestamp
   @Column(name="updated_at", nullable=false)
-  private Timestamp updated_at;
+  private Timestamp updatedAt;
 }

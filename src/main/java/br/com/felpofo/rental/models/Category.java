@@ -33,6 +33,6 @@ public class Category {
 
   @CreationTimestamp
   @Column(name="created_at", nullable=false, updatable=false)
-  private Timestamp created_at;
+  private Timestamp createdAt;
 
 }

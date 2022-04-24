@@ -25,7 +25,7 @@ public class Brand {
   private String name;
 
   @Column(name="image_url")
-  private String image_url;
+  private String imageUrl;
 
   @ManyToOne
   @JoinColumn(name = "cars_id")
@@ -37,6 +37,6 @@ public class Brand {
 
   @CreationTimestamp
   @Column(name="created_at", nullable=false, updatable=false)
-  private Timestamp created_at;
+  private Timestamp createdAt;
 
 }

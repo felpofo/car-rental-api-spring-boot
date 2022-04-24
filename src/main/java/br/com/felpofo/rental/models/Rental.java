@@ -33,22 +33,22 @@ public class Rental {
 
   @NonNull
   @Column(name="start_date", nullable=false)
-  private Timestamp start_date;
+  private Timestamp startDate;
 
   @NonNull
   @Column(name="end_date", nullable=false)
-  private Timestamp end_date;
+  private Timestamp endDate;
 
   @NonNull
   @Column(name="expected_return_date", nullable=false)
-  private Timestamp expected_return_date;
+  private Timestamp expectedReturnDate;
 
   @CreationTimestamp
   @Column(name="created_at", nullable=false, updatable=false)
-  private Timestamp created_at;
+  private Timestamp createdAt;
 
   @UpdateTimestamp
   @Column(name="updated_at", nullable=false)
-  private Timestamp updated_at;
+  private Timestamp updatedAt;
 
 }
