@@ -37,7 +37,7 @@ public class User {
   @Column(name="email", nullable=false, unique=true)
   private String email;
 
-  @Column(name="admin")
+  @Column(name="admin", nullable=false)
   private boolean admin;
 
   @Column(name="driver_license")
@@ -55,4 +55,23 @@ public class User {
   @Column(name="updated_at", nullable=false)
   private Timestamp updated_at;
 
+  public String toString() {
+    return String.format(
+      """
+        id=%s
+        name=%s
+        username=%s
+        password=%s
+        email=%s
+        admin=%s
+        driver_license=%s
+        rentals=%s
+        created_at=%s
+        updated_at=%s
+        """,
+      id, name, username, password,
+      email, admin, driver_license,
+      rentals, created_at, updated_at
+    );
+  }
 }
