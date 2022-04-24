@@ -26,18 +26,18 @@ public class UserController {
     return userService.addUser(user);
   }
 
-  @PutMapping("/{id}")
-  public User modifyUser(@PathVariable("id") UUID id, @RequestBody User user) {
+  @PutMapping
+  public User modifyUser(@RequestParam("id") UUID id, @RequestBody User user) {
     return userService.modifyUser(id, user);
   }
 
-  @PatchMapping("/{id}")
-  public HashMap<String, String> partiallyModifyUser(@PathVariable("id") UUID id, @RequestBody User user) {
+  @PatchMapping
+  public HashMap<String, String> partiallyModifyUser(@RequestParam("id") UUID id, @RequestBody User user) {
     return userService.partiallyModifyUser(id, user);
   }
 
-  @DeleteMapping("/{id}")
-  public void deleteUser(@PathVariable("id") UUID id) {
+  @DeleteMapping
+  public void deleteUser(@RequestParam("id") UUID id) {
     userService.deleteUserById(id);
   }
 }
