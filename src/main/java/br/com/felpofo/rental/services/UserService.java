@@ -38,7 +38,7 @@ public class UserService {
       dbUser.setUsername(user.getUsername());
       dbUser.setEmail(user.getEmail());
       dbUser.setPassword(user.getPassword());
-      dbUser.setDriver_license(user.getDriver_license());
+      dbUser.setDriverLicense(user.getDriverLicense());
 
       repository.flush();
     });
@@ -47,13 +47,13 @@ public class UserService {
   }
 
   @SuppressWarnings("ConstantConditions")
-  public HashMap<String, String> partiallyModifyUser(UUID id, User user) {
+  public HashMap<String, Object> partiallyModifyUser(UUID id, User user) {
     Optional<User> oldUser = repository.findById(id);
 
     if (oldUser.isEmpty())
       return null;
 
-    HashMap<String, String> changes = new HashMap<>();
+    HashMap<String, Object> changes = new HashMap<>();
 
     oldUser.ifPresent(dbUser -> {
       if (user.getName() != null) {
@@ -76,9 +76,9 @@ public class UserService {
       changes.put("password", user.getPassword());
       }
 
-      if (user.getDriver_license() != null) {
-        dbUser.setDriver_license(user.getDriver_license());
-        changes.put("driver_license", user.getDriver_license());
+      if (user.getDriverLicense() != null) {
+        dbUser.setDriverLicense(user.getDriverLicense());
+        changes.put("driver_license", user.getDriverLicense());
       }
 
       repository.flush();

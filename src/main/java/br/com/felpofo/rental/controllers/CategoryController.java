@@ -33,7 +33,7 @@ public class CategoryController {
   }
 
   @PatchMapping
-  public HashMap<String, String> partiallyModifyUser(@RequestParam("id") UUID id, @RequestBody Category category) {
+  public HashMap<String, Object> partiallyModifyUser(@RequestParam("id") UUID id, @RequestBody Category category) {
     return categoryService.partiallyModifyCategory(id, category);
   }
 

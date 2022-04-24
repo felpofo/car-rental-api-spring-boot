@@ -46,13 +46,13 @@ public class CategoryService {
   }
 
   @SuppressWarnings("ConstantConditions")
-  public HashMap<String, String> partiallyModifyCategory(UUID id, Category category) {
+  public HashMap<String, Object> partiallyModifyCategory(UUID id, Category category) {
     Optional<Category> oldCategory = repository.findById(id);
 
     if (oldCategory.isEmpty())
       return null;
 
-    HashMap<String, String> changes = new HashMap<>();
+    HashMap<String, Object> changes = new HashMap<>();
 
     oldCategory.ifPresent(dbCategory -> {
       if (category.getName() != null) {
@@ -62,7 +62,7 @@ public class CategoryService {
 
       if (category.getDescription() != null) {
         dbCategory.setDescription(category.getDescription());
-        changes.put("username", category.getDescription());
+        changes.put("description", category.getDescription());
       }
 
       repository.flush();

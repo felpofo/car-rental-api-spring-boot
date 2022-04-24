@@ -32,7 +32,7 @@ public class UserController {
   }
 
   @PatchMapping
-  public HashMap<String, String> partiallyModifyUser(@RequestParam("id") UUID id, @RequestBody User user) {
+  public HashMap<String, Object> partiallyModifyUser(@RequestParam("id") UUID id, @RequestBody User user) {
     return userService.partiallyModifyUser(id, user);
   }
 
